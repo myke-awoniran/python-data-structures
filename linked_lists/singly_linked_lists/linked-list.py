@@ -136,30 +136,37 @@ class LinkedList:
 
         return slow_pointer
 
-    # def reverse_list(self):
-    #     temp = self.head
-    #     self.head = self.tail
-    #     self.tail= temp
-    #     current_head = self.head
-    #     while current_head.next:
-    #         if
+    def reverse_list(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        after = temp.next
+        before = None
+        for _ in range(self.length):
+            after = temp.next
+            temp.next = before
+            before = temp
+            temp.next = after
+        return
 
 
 my_list = LinkedList(1)
 my_list.append(2)
-my_list = LinkedList(1)
+# my_list = LinkedList(1)
 my_list.append(2)
-my_list = LinkedList(1)
+# my_list = LinkedList(1)
 my_list.append(2)
 my_list.prepend(4)
-mid_value = my_list.find_middle()
-print(mid_value)
-# my_list.pop_first()
-# my_list.pop_first()
-# my_list.pop_first()
+# mid_value = my_list.find_middle_node()
+# print(mid_value.value)
+print(my_list.print_list())
 
+my_list.reverse_list()
+# my_list.pop_first()
+# my_list.pop_first()
+# my_list.pop_first()
+#
 # my_list.pop()
 # my_list.pop()
 # my_list.pop()
-# print(my_list.head.next.value)
-my_list.print_list()
+# print(my_list.print_list())
