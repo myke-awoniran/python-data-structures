@@ -76,7 +76,7 @@ class DoublyLinkedList:
             return self.head.value
         if index == self.length - 1:
             return self.tail.value
-        temp= self.head
+        temp = self.head
         for i in range(index):
             temp = temp.next
             if temp is None:
@@ -102,7 +102,7 @@ class DoublyLinkedList:
         # else:
         temp = self.head
         for _ in range(index):
-            temp= self.head
+            temp = self.head
             if temp is None:
                 return False
 
@@ -110,9 +110,24 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
-
-
-
-
-
-
+    def insert(self, index, value):
+        if index >= self.length or index < 0:
+            print('Index out of range')
+            return False
+        if self.head is None:
+            self.head = Node(value)
+            self.tail = self.head
+        else:
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+                if temp is None:
+                    return False
+            node_before = temp.prev
+            node_after = temp.next
+            node_before.next = Node(value)
+            node_after.prev = node_before.next
+            node_before.next.prev = temp.prev
+            node_after.prev.next = node_before.next
+        self.length += 1
+        return True
