@@ -11,3 +11,20 @@ class Graph:
             self.adjacency_list[vertex] = []
             return True
         return False
+
+    def add_edge(self, vertex1, vertex2):
+        graph_list = self.adjacency_list
+        if graph_list[vertex1] in graph_list.keys() and graph_list[vertex2] in graph_list.keys():
+            graph_list[vertex1].append(vertex2)
+            graph_list[vertex2].append(vertex1)
+            return True
+        return False
+
+
+my_graph = Graph()
+my_graph.add_vertex('a')
+my_graph.add_vertex('b')
+my_graph.add_edge('a', 'b')
+my_graph.add_vertex('c')
+my_graph.add_vertex('d')
+my_graph.print_graph()
