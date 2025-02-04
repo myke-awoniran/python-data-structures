@@ -34,7 +34,6 @@ def r_contains(self, value):
 def r_insert(self, value):
     return self.__r_insert(self.root, value)
 
-
 # def __delete(self, current_node,value):
-
+#     if current_node is None:
 # my_tree = BinarySearchTree()
