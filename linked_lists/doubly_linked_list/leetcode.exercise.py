@@ -33,3 +33,5 @@ class LinkedList:
             slow_ptr = slow_ptr.next
 
         return False
+
+    # def find_nth_element_from_end(self):
