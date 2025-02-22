@@ -1,10 +1,10 @@
 class Node:
-    def __init__(self, value, next: None):
+    def __init__(self, value):
         self.value = value
-        self.next = next
+        self.next = None
 
 
- class LinkedList:
+class LinkedList:
     def __init__(self, value):
         new_node = Node(value, None)
         self.head = new_node
