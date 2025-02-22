@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, value):
         self.value = value
@@ -22,3 +21,15 @@ class LinkedList:
             fast_ptr = fast_ptr.next.next
             slow_ptr = slow_ptr.next
         return slow_ptr
+
+    def has_loop(self):
+        fast_ptr = self.head
+        slow_ptr = self.head
+
+        while slow_ptr and fast_ptr and fast_ptr.next:
+            if fast_ptr == slow_ptr:
+                return True
+            fast_ptr = fast_ptr.next.next
+            slow_ptr = slow_ptr.next
+
+        return False
